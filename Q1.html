@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Dark / Light mode support -->
+    <meta name="color-scheme" content="light dark">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <title>Quiz: HTML Text</title>
+
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+        }
+
+        .container {
+            margin: 40px auto;
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        hr {
+            margin: 20px 0;
+        }
+
+        form {
+            margin-top: 30px;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: left;
+        }
+
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+        }
+
+        label {
+            margin-left: 8px;
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz Questions #1</h1>
+        <hr>
+
+        <form id="quizForm">
+            <fieldset>
+                <legend>What is the "tag" for bold in HTML?</legend>
+
+                <input type="radio" id="i" name="tag" value="&lt;i&gt;">
+                <label for="i">&lt;i&gt;</label>
+
+                <input type="radio" id="b" name="tag" value="&lt;b&gt;">
+                <label for="b">&lt;b&gt;</label>
+
+                <input type="radio" id="h4" name="tag" value="&lt;h4&gt;">
+                <label for="h4">&lt;h4&gt;</label>
+            </fieldset>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="result"></div>
+
+        <hr>
+
+        <h3>Chapters</h3>
+        <ul>
+            <li><a href="Ch1.html">Chapter 1: Basic HTML</a></li>
+            <li><a href="Ch2.html">Chapter 2: HTML Text</a></li>
+        </ul>
+
+        <nav>
+            <h5><a href="Ch3.html">Next Chapter &rarr;</a></h5>
+        </nav>
+    </div>
+
+    <!-- Sound files -->
+    <audio id="correctSound" src="assets/sounds/correct.mp3"></audio>
+    <audio id="incorrectSound" src="assets/sounds/incorrect.mp3"></audio>
+
+    <script>
+        const form = document.getElementById('quizForm');
+        const resultDiv = document.getElementById('result');
+        const correctSound = document.getElementById('correctSound');
+        const incorrectSound = document.getElementById('incorrectSound');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent page refresh
+
+            const selected = document.querySelector('input[name="tag"]:checked');
+
+            if (!selected) {
+                resultDiv.textContent = "Please select an answer!";
+                resultDiv.style.color = "orange";
+                return;
+            }
+
+            if (selected.value === "&lt;b&gt;") {
+                resultDiv.textContent = "Right ✅";
+                resultDiv.style.color = "green";
+                correctSound.play();
+            } else {
+                resultDiv.textContent = "Wrong ❌";
+                resultDiv.style.color = "red";
+                incorrectSound.play();
+            }
+        });
+    </script>
+</body>
+</html>

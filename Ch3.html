@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Dark / Light mode support -->
+    <meta name="color-scheme" content="light dark">
+
+    <title>Chapter 3: HTML Lists</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+
+        header h1 {
+            margin-bottom: 0;
+        }
+
+        figure {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        figcaption {
+            font-size: 0.9rem;
+            color: gray;
+        }
+
+        footer {
+            margin-top: 40px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+
+        footer a {
+            display: block;
+            margin: 5px 0;
+        }
+        .code-container {
+    position: relative;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.code-box {
+    background-color: #1e1e1e;
+    border: 2px solid #444;
+    border-radius: 8px;
+    padding: 20px;
+    overflow-x: auto;
+
+    color: #f1f1f1;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.95rem;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.copy-btn:hover {
+    background-color: #555;
+}
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Page Header -->
+    <header>
+        <main>
+            <h1>Chapter 3: HTML Lists</h1>
+            <p><strong>Unordered Lists, Ordered Lists and Description Lists.</strong></p>
+            <hr>
+        </main>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <section>
+            <p>
+			You can use lists like unordered lists, ordered lists and description lists	to list out ingredents, steps or instructions, and much more! 
+			
+			These lists are used to help organize data on a web page into a structured, easy-to-read format.
+               
+				
+				
+				
+            </p>
+        </section>
+    
+        <section>
+            <figure>
+                <img src="assets/images/chapter-imgs/lists.png" 
+                     alt="Example of lists.">
+                <figcaption>Example of Lists</figcaption>
+				<figcaption>Credit: GCFGlobal</figcaption>
+            </figure>
+			
+			<figure>
+                <img src="assets/images/chapter-imgs/ordered-list.jpg" 
+                     alt="Example of Ordered Lists.">
+                <figcaption>Example of Ordered Lists.</figcaption>
+				<figcaption>Credit: TutorialBrain</figcaption>
+            </figure>
+        </section>
+<script>
+function copyCode() {
+    const code = document.getElementById("codeBlock").innerText;
+    navigator.clipboard.writeText(code).then(() => {
+        alert("Code copied to clipboard!");
+    });
+}
+</script>
+<!--Example Code-->
+
+<h3>Example HTML Code:</h3>
+
+<div class="code-container">
+    <button class="copy-btn" onclick="copyCode()">Copy</button>
+
+    <pre class="code-box"><code id="codeBlock">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;p&gt;This is a Unordered List&lt;/p&gt;
+&lt;ul&gt;
+     &lt;li&gt;Beans&lt;/li&gt;
+    &lt;li&gt;Milk&lt;/li&gt;
+             &lt;li&gt;Cooking Oil&lt;/li&gt;
+			
+			 
+&lt;/ul&gt;
+
+&lt;p&gt;This is a Ordered List&lt;/p&gt;
+&lt;/ol&gt;	
+     &lt;li&gt;Preheat the Oven to 350 F&lt;/li&gt;
+    &lt;li&gt;Mix the ingredients&lt;/li&gt;
+             &lt;li&gt;Bake for 30 minutes&lt;/li&gt;
+&lt;/ol&gt;	
+
+    &lt;p&gt;This is a Description List&lt;/p&gt;		
+&lt;dl&gt;	
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;  
+    &lt;dt&gt;CSS&lt;/dt&gt;   
+    &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt; 	
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</div>
+
+<h3>Output</h3>
+<div class="code-container">
+    <button class="copy-btn" onclick="copyCode()">Copy</button>
+
+    <pre class="code-box"><code id="codeBlock"><p>This is a Unordered List<p>
+<ul>
+    <li>Beans</li>
+    <li>Milk</li>
+    <li>Cooking Oil</li>
+</ul>
+<p>This is a Ordered List<p>
+<ol>
+  <li>Preheat the oven</li>
+  <li>Mix the ingredients</li>
+  <li>Bake for 30 minutes</li>
+</ol>
+
+<p>This is a Description List<p>
+<dl>
+  <dt>HTML</dt>
+  <dd>HyperText Markup Language</dd>
+  <dt>CSS</dt>
+  <dd>Cascading Style Sheets</dd>
+</dl>
+
+</code></pre>
+</div>
+
+
+
+
+    <!-- Footer Navigation -->
+    <footer>
+        <main>
+            <nav>
+                <a href="Ch4.html">Next Chapter &rarr;</a>
+                <a href="Q1.html">&larr; Go Back</a>
+            </nav>
+        </main>
+    </footer>
+
+</body>
+</html>
