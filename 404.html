@@ -14,7 +14,12 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
-
+<script>
+window.onload = function() {
+    document.getElementById("url-display").innerHTML = document.URL;
+};
+   
+</script>
     <!-- CSS -->
     <style>
         /* CSS Variables */
@@ -96,6 +101,7 @@
         </figure>
         
         <h3>The server cannot find the requested resource (the page might have moved or been deleted).</h3>
+        <h3>Current Page URL:<span id="url-display"></span></h3>
         <hr>
 
         <ul>
