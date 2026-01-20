@@ -16,32 +16,40 @@
 
     <!-- CSS -->
     <style>
+    /* Default (Light Mode) */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+figcaption {
+    color: #555;
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+figcaption small {
+    color: #777;
+    font-style: italic;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
     body {
-        font-family: Helvetica, Arial, sans-serif;
-        color: #000;
-    }
-
-    .container {
-        margin: 40px auto;
-        width: 100%;
-        max-width: 900px;
-    }
-
-    figure {
-        margin: 20px 0;
-        text-align: center;
+        background-color: #121212;
+        color: #eaeaea;
     }
 
     figcaption {
-        color: #555;
-        font-size: 0.9rem;
-        margin-top: 8px;
+        color: #bbbbbb;
     }
 
     figcaption small {
-        color: #777;
-        font-style: italic;
+        color: #999999;
     }
+}
+   }
 </style>
 
 
@@ -88,3 +96,4 @@
     </div>
 </body>
 </html>
+
