@@ -83,69 +83,57 @@
 </head>
 <body>
     <div class="container">
-        <h1>Quiz Questions #1</h1>
+        <h1>Quiz Questions #2</h1>
         <hr>
 
-        <form id="quizForm">
+       <form id="emailQuizForm">
     <fieldset>
-        <legend>What is the "tag" for bold in HTML?</legend>
+        <legend>Which HTML tag and attribute are used to create a clickable email link?</legend>
 
-        <input type="radio" id="i" name="tag" value="&lt;i&gt;">
-        <label for="i">&lt;i&gt;</label><br>
+        <input type="radio" id="aTag" name="email" value="&lt;a href=&quot;mailto:example@example.com&quot;&gt;">
+        <label for="aTag">&lt;a href="mailto:example@example.com"&gt;</label><br>
 
-        <input type="radio" id="b" name="tag" value="&lt;b&gt;">
-        <label for="b">&lt;b&gt;</label><br>
+        <input type="radio" id="linkTag" name="email" value="&lt;link&gt;">
+        <label for="linkTag">&lt;link&gt;</label><br>
 
-        <input type="radio" id="h4" name="tag" value="&lt;h4&gt;">
-        <label for="h4">&lt;h4&gt;</label>
+        <input type="radio" id="formTag" name="email" value="&lt;form&gt;">
+        <label for="formTag">&lt;form&gt;</label>
     </fieldset>
 
     <button type="submit">Submit</button>
 </form>
 
-<div id="result"></div>
+<div id="emailResult"></div>
 
-<hr>
-
-<h3>Chapters</h3>
-<ul>
-    <li><a href="Ch1.html">Chapter 1: Basic HTML</a></li>
-    <li><a href="Ch2.html">Chapter 2: HTML Text</a></li>
-</ul>
-
-<nav>
-    <h5><a href="Ch3.html">Next Chapter &rarr;</a></h5>
-</nav>
-
-<!-- Sound files -->
+<!-- Sound files (reuse your previous sounds) -->
 <audio id="correctSound" src="assets/sounds/correct.mp3"></audio>
 <audio id="incorrectSound" src="assets/sounds/incorrect.mp3"></audio>
 
 <script>
-    const form = document.getElementById('quizForm');
-    const resultDiv = document.getElementById('result');
+    const emailForm = document.getElementById('emailQuizForm');
+    const emailResult = document.getElementById('emailResult');
     const correctSound = document.getElementById('correctSound');
     const incorrectSound = document.getElementById('incorrectSound');
 
-    form.addEventListener('submit', function (e) {
-        e.preventDefault(); // Prevent page refresh
+    emailForm.addEventListener('submit', function(e) {
+        e.preventDefault();
 
-        const selected = document.querySelector('input[name="tag"]:checked');
+        const selected = document.querySelector('input[name="email"]:checked');
 
         if (!selected) {
-            resultDiv.textContent = "Please select an answer!";
-            resultDiv.style.color = "orange";
+            emailResult.textContent = "Please select an answer!";
+            emailResult.style.color = "orange";
             return;
         }
 
-        if (selected.value === "<b>") {
-            resultDiv.textContent = "Right ✅";
-            resultDiv.style.color = "green";
+        if (selected.value === '<a href="mailto:example@example.com">') {
+            emailResult.textContent = "Right ✅";
+            emailResult.style.color = "green";
             correctSound.currentTime = 0;
             correctSound.play();
         } else {
-            resultDiv.textContent = "Wrong ❌";
-            resultDiv.style.color = "red";
+            emailResult.textContent = "Wrong ❌";
+            emailResult.style.color = "red";
             incorrectSound.currentTime = 0;
             incorrectSound.play();
         }
