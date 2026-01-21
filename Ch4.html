@@ -110,29 +110,20 @@
 
         <section>
             <p>
-			You can use links to send users to another website or to anothor part of your website
-               
-				
-				
-				
+			You can use links to send users to another website or to anothor part of your website.
+            They are clickable elements on web pages, emails, or documents that connect to other resources	
             </p>
         </section>
     
         <section>
             <figure>
-                <img src="assets/images/chapter-imgs/lists.png" 
-                     alt="Example of lists.">
-                <figcaption>Example of Lists</figcaption>
-				<figcaption>Credit: GCFGlobal</figcaption>
+                <img src="assets/images/chapter-imgs/html-link.png" 
+                     alt="Link Structure.">
+                <figcaption>Link Structure.</figcaption>
+				<figcaption>Credit: Computer Hope</figcaption>
             </figure>
 			
-			<figure>
-                <img src="assets/images/chapter-imgs/ordered-list.jpg" 
-                     alt="Example of Ordered Lists.">
-                <figcaption>Example of Ordered Lists.</figcaption>
-				<figcaption>Credit: TutorialBrain</figcaption>
-            </figure>
-        </section>
+			
 <script>
 function copyCode() {
     const code = document.getElementById("codeBlock").innerText;
@@ -151,28 +142,16 @@ function copyCode() {
     <pre class="code-box"><code id="codeBlock">&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;body&gt;
-    &lt;p&gt;This is a Unordered List&lt;/p&gt;
-&lt;ul&gt;
-     &lt;li&gt;Beans&lt;/li&gt;
-    &lt;li&gt;Milk&lt;/li&gt;
-             &lt;li&gt;Cooking Oil&lt;/li&gt;
-			
-			 
-&lt;/ul&gt;
+    &lt;p&gt;This is a Normal Link.&lt;/p&gt;
+&lt;a href="https://www.example.com/"&gt;Example Website&lt;/a&gt;
+     
+ &lt;p&gt;This is a Link That Opens In a New Window.&lt;/p&gt;		
+ 
+ &lt;a href="https://www.example.com/" target="_blank"&gt;Example Website (Opens In New Window.)&lt;/a&gt;	
 
-&lt;p&gt;This is a Ordered List&lt;/p&gt;
-&lt;/ol&gt;	
-     &lt;li&gt;Preheat the Oven to 350 F&lt;/li&gt;
-    &lt;li&gt;Mix the ingredients&lt;/li&gt;
-             &lt;li&gt;Bake for 30 minutes&lt;/li&gt;
-&lt;/ol&gt;	
+ &lt;p&gt;This is a Email link&lt;/p&gt;
 
-    &lt;p&gt;This is a Description List&lt;/p&gt;		
-&lt;dl&gt;	
-    &lt;dt&gt;HTML&lt;/dt&gt;
-    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;  
-    &lt;dt&gt;CSS&lt;/dt&gt;   
-    &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt; 	
+ &lt;a href="mailto:fox@example.com"&gt;Email daz Fox&lt;/a&gt;	
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
@@ -182,26 +161,15 @@ function copyCode() {
 <div class="code-container">
     <button class="copy-btn" onclick="copyCode()">Copy</button>
 
-    <pre class="code-box"><code id="codeBlock"><p>This is a Unordered List<p>
-<ul>
-    <li>Beans</li>
-    <li>Milk</li>
-    <li>Cooking Oil</li>
-</ul>
-<p>This is a Ordered List<p>
-<ol>
-  <li>Preheat the oven</li>
-  <li>Mix the ingredients</li>
-  <li>Bake for 30 minutes</li>
-</ol>
+    <pre class="code-box"><code id="codeBlock"><p>This is a Normal Link.<p>
+<a href=""https://www.example.com/">Example Website</a>
 
-<p>This is a Description List<p>
-<dl>
-  <dt>HTML</dt>
-  <dd>HyperText Markup Language</dd>
-  <dt>CSS</dt>
-  <dd>Cascading Style Sheets</dd>
-</dl>
+<p>This is a Link That Opens In a New Window.</p>
+
+<a href="https://www.example.com/"  target="_blank">Example Website (Opens In New Window.)</a>
+ 
+<p>This is a Email link</p>
+<a href="mailto:fox@example.com">Email daz Fox</a>
 
 </code></pre>
 </div>
