@@ -1,31 +1,39 @@
-<h1>Coding a Website Assets</h1>
-
-<h3>Images</h>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>PNG Gallery</title>
+<meta charset="UTF-8">
+<title>Coding a Website Assets</title>
+
 <style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
     .gallery img {
-        width: 200px; /* Adjust size as needed */
-        margin: 5px;
+        width: 200px;
+        margin: 6px;
         border: 1px solid #ccc;
     }
 </style>
 </head>
 <body>
 
-<h1>My PNG Images</h1>
-<div class="gallery">
-    <?php
-    $directory = "/assets";
-    // Get all files with a .png extension in the directory
-    $pngs = glob($directory . "*.png"); 
+<h1>Coding a Website Assets</h1>
+<h3>Images</h3>
 
-    foreach($pngs as $image) {
-        echo '<img src="' . $image . '" alt="Image" />' . "\n";
+<div class="gallery">
+<?php
+    $directory = "assets/";          // folder relative to this file
+    $pngs = glob($directory . "*.png");
+
+    if ($pngs) {
+        foreach ($pngs as $image) {
+            echo '<img src="' . $image . '" alt="PNG Image">';
+        }
+    } else {
+        echo "<p>No PNG images found.</p>";
     }
-    ?>
+?>
 </div>
 
 </body>
