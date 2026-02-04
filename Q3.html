@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+
+    <title>Quiz: HTML Lists</title>
+
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+        }
+
+        .container {
+            margin: 40px auto;
+            max-width: 900px;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        #listResult {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Quiz Questions #2</h1>
+    <hr>
+
+    <form id="listQuizForm">
+        <fieldset>
+            <legend>Which HTML tag is used to create an unordered (bulleted) list?</legend>
+
+            <input type="radio" id="ul" name="list" value="ul">
+            <label for="ul">&lt;ul&gt;</label>
+
+            <input type="radio" id="ol" name="list" value="ol">
+            <label for="ol">&lt;ol&gt;</label>
+
+            <input type="radio" id="li" name="list" value="li">
+            <label for="li">&lt;li&gt;</label>
+        </fieldset>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="listResult"></div>
+
+    <ul>
+        <li><a href="Ch3.html">Chapter 3: HTML Lists</a></li>
+        <li><a href="Ch4.html">Chapter 4: Links</a></li>
+    </ul>
+
+    <nav>
+        <h5><a href="Ch7.html">Next Chapter &rarr;</a></h5>
+    </nav>
+
+    <audio id="correctSound" src="assets/sounds/correct.mp3"></audio>
+    <audio id="incorrectSound" src="assets/sounds/incorrect.mp3"></audio>
+</div>
+
+<script>
+    const listForm = document.getElementById('listQuizForm');
+    const listResult = document.getElementById('listResult');
+    const correctSound = document.getElementById('correctSound');
+    const incorrectSound = document.getElementById('incorrectSound');
+
+    listForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const selected = document.querySelector('input[name="list"]:checked');
+
+        if (!selected) {
+            listResult.textContent = "Please select an answer!";
+            listResult.style.color = "orange";
+            return;
+        }
+
+        if (selected.value === "ul") {
+            listResult.textContent = "Right ✅";
+            listResult.style.color = "green";
+            correctSound.currentTime = 0;
+            correctSound.play();
+        } else {
+            listResult.textContent = "Wrong ❌";
+            listResult.style.color = "red";
+            incorrectSound.currentTime = 0;
+            incorrectSound.play();
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Dark / Light mode support -->
+    <meta name="color-scheme" content="light dark">
+
+    <title>Chapter 4: Links</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+
+        header h1 {
+            margin-bottom: 0;
+        }
+
+        figure {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        figcaption {
+            font-size: 0.9rem;
+            color: gray;
+        }
+
+        footer {
+            margin-top: 40px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+
+        footer a {
+            display: block;
+            margin: 5px 0;
+        }
+        .code-container {
+    position: relative;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.code-box {
+    background-color: #1e1e1e;
+    border: 2px solid #444;
+    border-radius: 8px;
+    padding: 20px;
+    overflow-x: auto;
+
+    color: #f1f1f1;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.95rem;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.copy-btn:hover {
+    background-color: #555;
+}
+		 a:hover {
+            text-decoration: underline;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Page Header -->
+    <header>
+        <main>
+            <h1>Chapter 5: Images</h1>
+            <p><strong>Images.</strong></p>
+            <hr>
+        </main>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <section>
+            <p>
+			You can use images to diplay visual content in a webpage to enhance user experience and convey information.
+            </p>
+        </section>
+    
+        <section>
+            <figure>
+                <img src="assets/images/chapter-img/imagecode.png" 
+                     alt="Image code example.">
+                <figcaption>Image code example.</figcaption>
+				<figcaption>Credit: Uxcel</figcaption>
+                <br>
+                <img src="assets/images/chapter-img/imagecode2.png" 
+                     alt="Image code example.">
+                <figcaption>Image code example.</figcaption>
+				<figcaption>Credit: HowToDoIt, Youtube</figcaption>
+            </figure>
+			
+			
+<script>
+function copyCode() {
+    const code = document.getElementById("codeBlock").innerText;
+    navigator.clipboard.writeText(code).then(() => {
+        alert("Code copied to clipboard!");
+    });
+}
+</script>
+<!--Example Code-->
+
+<h3>Example HTML Code:</h3>
+
+<div class="code-container">
+    <button class="copy-btn" onclick="copyCode()">Copy</button>
+
+    <pre class="code-box"><code id="codeBlock">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;p&gt;This is a Normal Link.&lt;/p&gt;
+&lt;a href="https://www.example.com/"&gt;Example Website&lt;/a&gt;
+     
+ &lt;p&gt;This is a Link That Opens In a New Window.&lt;/p&gt;		
+ 
+ &lt;a href="https://www.example.com/" target="_blank"&gt;Example Website (Opens In New Window.)&lt;/a&gt;	
+
+ &lt;p&gt;This is a Email link&lt;/p&gt;
+
+ &lt;a href="mailto:fox@example.com"&gt;Email daz Fox&lt;/a&gt;	
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</div>
+
+<h3>Output</h3>
+<div class="code-container">
+    <button class="copy-btn" onclick="copyCode()">Copy</button>
+
+    <pre class="code-box"><code id="codeBlock"><p>This is a Normal Link.<p>
+<a href="https://www.example.com/">Example Website</a>
+
+<p>This is a Link That Opens In a New Window.</p>
+
+<a href="https://www.example.com/"  target="_blank">Example Website (Opens In New Window.)</a>
+ 
+<p>This is a Email link</p>
+<a href="mailto:fox@example.com">Email daz Fox</a>
+
+</code></pre>
+</div>
+
+
+
+
+    <!-- Footer Navigation -->
+    <footer>
+        <main>
+            <nav>
+                <a href="Q2.html">Answer Question #2&rarr;</a>
+                <a href="Ch3.html">&larr; Go Back</a>
+            </nav>
+        </main>
+    </footer>
+
+</body>
+</html>
