@@ -5,15 +5,20 @@
 <title>Coding a Website Assets</title>
 
 <style>
-    body {
-        font-family: Arial, sans-serif;
-    }
+body {
+    font-family: Arial, sans-serif;
+}
 
-    .gallery img {
-        width: 200px;
-        margin: 6px;
-        border: 1px solid #ccc;
-    }
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 200px;
+    margin: 6px;
+    border: 1px solid #ccc;
+}
 </style>
 </head>
 <body>
@@ -21,20 +26,35 @@
 <h1>Coding a Website Assets</h1>
 <h3>Images</h3>
 
-<div class="gallery">
-<?php
-    $directory = "assets/";          // folder relative to this file
-    $pngs = glob($directory . "*.png");
+<input type="file" id="folderPicker" webkitdirectory multiple>
+<p>Select your <strong>assets</strong> folder</p>
 
-    if ($pngs) {
-        foreach ($pngs as $image) {
-            echo '<img src="' . $image . '" alt="PNG Image">';
-        }
-    } else {
-        echo "<p>No PNG images found.</p>";
+<div class="gallery" id="gallery"></div>
+
+<script>
+const picker = document.getElementById("folderPicker");
+const gallery = document.getElementById("gallery");
+
+picker.addEventListener("change", () => {
+    gallery.innerHTML = "";
+
+    const files = Array.from(picker.files).filter(file =>
+        file.name.match(/\.(png|jpg|jpeg|gif|webp)$/i)
+    );
+
+    if (files.length === 0) {
+        gallery.innerHTML = "<p>No images found.</p>";
+        return;
     }
-?>
-</div>
+
+    files.forEach(file => {
+        const img = document.createElement("img");
+        img.src = URL.createObjectURL(file);
+        img.alt = file.name;
+        gallery.appendChild(img);
+    });
+});
+</script>
 
 </body>
 </html>
