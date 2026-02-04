@@ -1,0 +1,32 @@
+<h1>Coding a Website Assets</h1>
+
+<h3>Images</h>
+<!DOCTYPE html>
+<html>
+<head>
+<title>PNG Gallery</title>
+<style>
+    .gallery img {
+        width: 200px; /* Adjust size as needed */
+        margin: 5px;
+        border: 1px solid #ccc;
+    }
+</style>
+</head>
+<body>
+
+<h1>My PNG Images</h1>
+<div class="gallery">
+    <?php
+    $directory = "/";
+    // Get all files with a .png extension in the directory
+    $pngs = glob($directory . "*.png"); 
+
+    foreach($pngs as $image) {
+        echo '<img src="' . $image . '" alt="Image" />' . "\n";
+    }
+    ?>
+</div>
+
+</body>
+</html>
