@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Dark / Light mode support -->
+    <meta name="color-scheme" content="light dark">
+
+    <title>Chapter 6: Tabels</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+
+        header h1 {
+            margin-bottom: 0;
+        }
+
+        figure {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        figcaption {
+            font-size: 0.9rem;
+            color: gray;
+        }
+
+        footer {
+            margin-top: 40px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+
+        footer a {
+            display: block;
+            margin: 5px 0;
+        }
+        .code-container {
+    position: relative;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.code-box {
+    background-color: #1e1e1e;
+    border: 2px solid #444;
+    border-radius: 8px;
+    padding: 20px;
+    overflow-x: auto;
+
+    color: #f1f1f1;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.95rem;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.copy-btn:hover {
+    background-color: #555;
+}
+		 a:hover {
+            text-decoration: underline;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Page Header -->
+    <header>
+        <main>
+            <h1>Chapter 5: Images</h1>
+            <p><strong>Tables in HTML</strong></p>
+            <hr>
+        </main>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <section>
+            <p>
+			You can use tabels to organize data into rows and columns, using specific tags.
+            </p>
+        </section>
+    
+        <section>
+            <figure>
+                <img src="/assets/images/chapter-imgs/table.png" 
+                     alt="Image code example.">
+                <figcaption>Image code example.</figcaption>
+				<figcaption>Credit: Didin J., Djamware</figcaption>
+                
+            </figure>
+			
+			
+<script>
+function copyCode() {
+    const code = document.getElementById("codeBlock").innerText;
+    navigator.clipboard.writeText(code).then(() => {
+        alert("Code copied to clipboard!");
+    });
+}
+</script>
+<!--Example Code-->
+
+<h3>Example HTML Code:</h3>
+
+<div class="code-container">
+    <button class="copy-btn" onclick="copyCode()">Copy</button>
+
+    <pre class="code-box"><code id="codeBlock">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;p&gt;Monthly Sales Data&lt;/p&gt;
+
+    &lt;thead&gt;
+    &lt;tr&gt;
+  
+   &lt;th&gt;Month&lt;/th&gt;
+   &lt;th&gt;Sales&lt;/th&gt;
+   &lt;/tr&gt;
+   &lt;/thead&gt
+   
+   &lt;tbody&gt;
+
+   &lt;tr&gt;
+   &lt;td&gt;January&lt;/td&gt;
+   &lt;td&gt;$5,000&lt;/td&gt;
+   &lt;/tr&gt;
+
+   &lt;tr&gt;
+   &lt;td&gt;February&lt;/td&gt;
+   &lt;td&gt;$3,500&lt;/td&gt;
+   &lt;/tr&gt;
+</tbody>
+</table>
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</div>
+
+<h3>Output</h3>
+<div class="code-container">
+    <button class="copy-btn" onclick="copyCode()">Copy</button>
+
+    <pre class="code-box"><code id="codeBlock"><p>This is a Normal Image</p>
+        <img src="/assets/images/chapter-imgs/Dinosaur.png" alt="A picture of a dinosaur" />
+
+        <p>Make image clickable</p>
+        <a href="https://en.wikipedia.org">
+    <img src="/assets/images/chapter-imgs/Dinosaur.png" alt="A picture of a dinosaur" />
+</a>
+
+
+
+</code></pre>
+</div>
+
+
+
+
+    <!-- Footer Navigation -->
+    <footer>
+        <main>
+            <nav>
+                <a href="Ch6.html">Next Chapter &rarr;</a>
+                <a href="Ch4.html">Go Back &larr; </a>
+            </nav>
+        </main>
+    </footer>
+
+</body>
+</html>
+
