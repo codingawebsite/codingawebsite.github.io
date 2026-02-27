@@ -13,6 +13,11 @@
     <title>Quiz: HTML Text</title>
 
     <style>
+        figcaption {
+            font-size: 0.9rem;
+            color: gray;
+        }
+
         body {
             font-family: Helvetica, Arial, sans-serif;
             background-color: #f9f9f9;
@@ -151,6 +156,13 @@
         }
     });
 </script>
-
+<figcaption>
+     <span id="year"></span>
+    AllensTechChannel. All rights reserved.
+    </figcaption>
+    
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
