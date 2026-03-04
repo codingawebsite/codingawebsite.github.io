@@ -28,11 +28,14 @@
     <!-- CSS -->
     <style>
         /* CSS Variables */
-        .top-left-img {
-  position: fixed;
-  top: 0;
-  left: 0;
+        .logo-background {
+  background-image: url('your-image.jpg');
+  background-repeat: no-repeat;
+  background-position: top left; /* Positions the background image at the top left */
+  height: 100px; /* Specify height and width for the div */
+  width: 150px;
 }
+
 
         :root {
             --bg-color: #ffffff;
@@ -107,9 +110,8 @@
         console.log(" \\______/  \\______/  \\______/        \\____/\\_/      |__/  |__/   |__/   |__/     |__/|________/");
     </script>
 </head>
-<div class="container">
-  <img src="assets/images/favicon.png" alt="Description" class="top-left-img-absolute">
-</div>
+<div class="logo-background"></div>
+
 <body>
     <div class="container">
         <figure>
