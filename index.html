@@ -28,13 +28,20 @@
     <!-- CSS -->
     <style>
         /* CSS Variables */
-        .logo-background {
-  background-image: url('assets/images/title.png');
-  background-repeat: no-repeat;
-  background-position: top left; /* Positions the background image at the top left */
-  height: 167px; /* Specify height and width for the div */
-  width: 302px;
+        ..corner-link-container {
+    position: fixed; /* or absolute, depending on your needs */
+    top: 0;
+    right: 0; /* Use 'left: 0;' for the top-left corner */
+    padding: 10px; /* Optional: adds some space from the corner */
+    z-index: 1000; /* Optional: ensures the link is above other content */
 }
+
+.corner-link-container img {
+    width: 50px; /* Adjust the image size as needed */
+    height: auto;
+    border: none; /* Optional: removes default link border in some browsers */
+}
+
 
 
         :root {
@@ -110,7 +117,11 @@
         console.log(" \\______/  \\______/  \\______/        \\____/\\_/      |__/  |__/   |__/   |__/     |__/|________/");
     </script>
 </head>
-<div class="logo-background"></div>
+<div class="corner-link-container">
+    <a href="https://codingawebsite.github.io" target="_blank" aria-label="Homepage">
+        <img src="assets/images/title.png" alt="Description of image">
+    </a>
+</div>
 
 <body>
     <div class="container">
