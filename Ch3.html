@@ -20,7 +20,17 @@
     padding: 10px; /* Optional: adds some space from the corner */
     z-index: 1000; /* Optional: ensures the link is above other content */
 }
-a { color: lightblue; }
+ :root {
+  color-scheme: light dark; /* Informs the browser the page supports both schemes */
+}
+
+a {
+  /* First value for light mode, second for dark mode */
+  color: light-dark(#0000ff);
+}
+a:hover {
+  color: lightblue; 
+}
 .corner-link-container img {
     width: 200px; /* Adjust the image size as needed */
     height: auto;

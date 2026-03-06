@@ -13,7 +13,13 @@
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
     <style>
-        a { color: lightblue; }
+        a {
+  /* First value for light mode, second for dark mode */
+  color: light-dark(#0000ff);
+}
+a:hover {
+  color: lightblue; 
+}
          ..corner-link-container {
     position: fixed; /* or absolute, depending on your needs */
     top: 0;
