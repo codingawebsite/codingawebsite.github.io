@@ -23,6 +23,19 @@ window.onload = function() {
     <!-- CSS -->
     <style>
         /* CSS Variables */
+        ..corner-link-container {
+    position: fixed; /* or absolute, depending on your needs */
+    top: 0;
+    right: 0; /* Use 'left: 0;' for the top-left corner */
+    padding: 10px; /* Optional: adds some space from the corner */
+    z-index: 1000; /* Optional: ensures the link is above other content */
+}
+
+.corner-link-container img {
+    width: 200px; /* Adjust the image size as needed */
+    height: auto;
+    border: none; /* Optional: removes default link border in some browsers */
+}
         :root {
             --bg-color: #ffffff;
             --text-color: #000000;
@@ -87,7 +100,11 @@ window.onload = function() {
    
    
 </head>
-
+<div style="padding: 10px;" class="corner-link-container">
+    <a href="https://codingawebsite.github.io"  aria-label="Homepage">
+        <img src="assets/images/corner.png" alt="HTML CSS JS Image.">
+    </a>
+</div>
 <body>
     <div class="container">
         
