@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Dark / Light mode support -->
+    <meta name="color-scheme" content="light dark">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <title>Quiz: HTML Images</title>
+
+    <style>
+         ..corner-link-container {
+    position: fixed; /* or absolute, depending on your needs */
+    top: 0;
+    right: 0; /* Use 'left: 0;' for the top-left corner */
+    padding: 10px; /* Optional: adds some space from the corner */
+    z-index: 1000; /* Optional: ensures the link is above other content */
+}
+
+.corner-link-container img {
+    width: 200px; /* Adjust the image size as needed */
+    height: auto;
+    border: none; /* Optional: removes default link border in some browsers */
+}
+        figcaption {
+            font-size: 0.9rem;
+            color: gray;
+        }
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+        }
+
+        .container {
+            margin: 40px auto;
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        hr {
+            margin: 20px 0;
+        }
+
+        form {
+            margin-top: 30px;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: left;
+        }
+
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+        }
+
+        label {
+            margin-left: 8px;
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+a { color: rgb(0, 140, 255); }}
+a:hover {
+  color: lightblue; 
+}
+    </style>
+</head>
+<div style="padding: 10px;" class="corner-link-container">
+    <a href="https://codingawebsite.github.io"  aria-label="Homepage">
+        <img src="assets/images/corner.png" alt="HTML CSS JS Image.">
+    </a>
+</div>
+<body>
+    <div class="container">
+        <h1>Quiz Questions #4</h1>
+        <hr>
+
+        <form id="quizForm">
+    <fieldset>
+        <legend>What is the tag that acts as a container for all other table elements?</legend>
+
+        <input type="radio" id="th" name="tag" value="&lt;th&gt;">
+        <label for="th">&lt;th&gt;</label><br>
+
+        <input type="radio" id="table" name="tag" value="&lt;table&gt;">
+        <label for="table">&lt;table&gt;</label><br>
+
+        <input type="radio" id="tr" name="tag" value="tr">
+        <label for="tr">&lt;tr&gt;</label>
+    </fieldset>
+
+    <button type="submit">Submit</button>
+</form>
+
+<div id="result"></div>
+
+<hr>
+
+<h3>Chapters</h3>
+<ul>
+    <li><a href="Ch6.html">Chapter 6: Tables</a></li>
+    <li><a href="Ch5.html">Chapter 5: Images</a></li>
+</ul>
+
+<nav>
+    <h5><a href="Ch7.html">Next Chapter &rarr;</a></h5>
+</nav>
+
+<!-- Sound files -->
+<audio id="correctSound" src="assets/sounds/correct.mp3"></audio>
+<audio id="incorrectSound" src="assets/sounds/incorrect.mp3"></audio>
+
+<script>
+    const form = document.getElementById('quizForm');
+    const resultDiv = document.getElementById('result');
+    const correctSound = document.getElementById('correctSound');
+    const incorrectSound = document.getElementById('incorrectSound');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent page refresh
+
+        const selected = document.querySelector('input[name="tag"]:checked');
+
+        if (!selected) {
+            resultDiv.textContent = "Please select an answer!";
+            resultDiv.style.color = "orange";
+            return;
+        }
+
+        if (selected.value === "table") {
+            resultDiv.textContent = "Right ✅";
+            resultDiv.style.color = "green";
+            correctSound.currentTime = 0;
+            correctSound.play();
+        } else {
+            resultDiv.textContent = "Wrong ❌";
+            resultDiv.style.color = "red";
+            incorrectSound.currentTime = 0;
+            incorrectSound.play();
+        }
+    });
+</script>
+<figcaption>
+      Copyright &copy;
+    <span id="year"></span>
+    AllensTechChannel. All rights reserved.<a href="https://codingawebsite.github.io/contact.html" target="_blank" rel="noopener noreferrer">Contact Me!</a>
+    </figcaption>
+    
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</body>
+</html>
+
