@@ -13,7 +13,7 @@
     <title>Quiz: HTML Images</title>
 
     <style>
-         ..corner-link-container {
+         .corner-link-container {
     position: fixed; /* or absolute, depending on your needs */
     top: 0;
     right: 0; /* Use 'left: 0;' for the top-left corner */
@@ -88,7 +88,7 @@
             font-size: 1.2rem;
         }
 
-a { color: rgb(0, 140, 255); }}
+a { color: rgb(0, 140, 255); }
 a:hover {
   color: lightblue; 
 }
@@ -156,17 +156,19 @@ a:hover {
             return;
         }
 
-        if (selected.value === "table") {
-            resultDiv.textContent = "Right ✅";
-            resultDiv.style.color = "green";
-            correctSound.currentTime = 0;
-            correctSound.play();
-        } else {
-            resultDiv.textContent = "Wrong ❌";
-            resultDiv.style.color = "red";
-            incorrectSound.currentTime = 0;
-            incorrectSound.play();
-        }
+       if (selected.value === "table") {
+    resultDiv.textContent = "Right ✅";
+    resultDiv.style.color = "green";
+    resultDiv.style.backgroundColor = "#e6ffe6";
+    correctSound.currentTime = 0;
+    correctSound.play();
+} else {
+    resultDiv.textContent = "Wrong ❌";
+    resultDiv.style.color = "red";
+    resultDiv.style.backgroundColor = "#ffe6e6";
+    incorrectSound.currentTime = 0;
+    incorrectSound.play();
+}
     });
 </script>
 <figcaption>
